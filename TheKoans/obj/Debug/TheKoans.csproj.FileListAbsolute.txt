@@ -1,0 +1,9 @@
+C:\Git\csharp-koans\TheKoans\bin\Debug\PathToEnlightenment.orderedtest
+C:\Git\csharp-koans\TheKoans\bin\Debug\TheKoans.dll
+C:\Git\csharp-koans\TheKoans\bin\Debug\TheKoans.pdb
+C:\Git\csharp-koans\TheKoans\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Git\csharp-koans\TheKoans\obj\Debug\TheKoans.csprojAssemblyReference.cache
+C:\Git\csharp-koans\TheKoans\obj\Debug\TheKoans.csproj.CoreCompileInputs.cache
+C:\Git\csharp-koans\TheKoans\obj\Debug\TheKoans.csproj.CopyComplete
+C:\Git\csharp-koans\TheKoans\obj\Debug\TheKoans.dll
+C:\Git\csharp-koans\TheKoans\obj\Debug\TheKoans.pdb
