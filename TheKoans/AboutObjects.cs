@@ -14,7 +14,7 @@ namespace TheKoans
         [TestMethod]
         public void EverythingIsAnObject()
         {
-            Assert.AreEqual(1 is Object, 1 is Object);
+            Assert.AreEqual(true, 1 is Object);
             Assert.AreEqual(1.5 is Object, 1.5 is Object);
             Assert.AreEqual("string" is Object, "string" is Object);
             Assert.AreEqual(true is Object, true is Object);
@@ -23,13 +23,13 @@ namespace TheKoans
         [TestMethod]
         public void ExceptNullIsNotAnObject()
         {
-            Assert.AreEqual(FILL_ME_IN, null is Object);
+            Assert.AreEqual(false, null is Object);
         }
 
         [TestMethod]
         public void ObjectLiteralIsAnObject()
         {
-            Assert.AreEqual(FILL_ME_IN, new { } is Object);
+            Assert.AreEqual(true, new { } is Object);
         }
 
         //TODO - finish remaining object tests from the RubyKoans AboutObjects
