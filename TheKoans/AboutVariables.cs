@@ -35,7 +35,7 @@ namespace TheKoans
             //Even though we don't specify types explicitly, the compiler
             //will pick one for us
             var names = new[] { "John", "Smith" };
-            Assert.AreEqual(typeof(string), names.GetType(), "Determine the type of the array elements to improve your Karma.");
+            Assert.AreEqual(typeof(string[]), names.GetType(), "Determine the type of the array elements to improve your Karma.");
 
             //but only if it can. So this doesn't work
             // (Try uncommenting the line below to see how the compiler reacts)

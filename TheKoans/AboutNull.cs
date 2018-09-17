@@ -14,7 +14,7 @@ namespace TheKoans
         public void NilIsNotAnObject()
         {
             //not everything is an object
-            Assert.IsTrue(typeof(object).IsAssignableFrom(null), "To quote from South Park's World of Warcraft episode: 'Can you kill that which has no life?'"); 
+            Assert.IsTrue(typeof(object).IsAssignableFrom(typeof(int)), "To quote from South Park's World of Warcraft episode: 'Can you kill that which has no life?'"); 
         }
 
         [TestMethod]
@@ -50,7 +50,7 @@ namespace TheKoans
         public void AWayNotToCheckThatAnObjectIsNull()
         {
             object obj = null;
-            Assert.IsTrue(obj.Equals(null));
+            Assert.IsTrue(obj == null);
         }
 
 
