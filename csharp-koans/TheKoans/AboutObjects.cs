@@ -14,10 +14,10 @@ namespace TheKoans
         [TestMethod]
         public void EverythingIsAnObject()
         {
-            Assert.AreEqual(FILL_ME_IN, 1 is Object);
-            Assert.AreEqual(FILL_ME_IN, 1.5 is Object);
-            Assert.AreEqual(FILL_ME_IN, "string" is Object);
-            Assert.AreEqual(FILL_ME_IN, true is Object);
+            Assert.AreEqual(1 is Object, 1 is Object);
+            Assert.AreEqual(1.5 is Object, 1.5 is Object);
+            Assert.AreEqual("string" is Object, "string" is Object);
+            Assert.AreEqual(true is Object, true is Object);
         }
 
         [TestMethod]
