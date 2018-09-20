@@ -15,9 +15,9 @@ namespace TheKoans
         public void EverythingIsAnObject()
         {
             Assert.AreEqual(true, 1 is Object);
-            Assert.AreEqual(1.5 is Object, 1.5 is Object);
-            Assert.AreEqual("string" is Object, "string" is Object);
-            Assert.AreEqual(true is Object, true is Object);
+            Assert.AreEqual(true, 1.5 is Object);
+            Assert.AreEqual(true, "string" is Object);
+            Assert.AreEqual(true, true is Object);
         }
 
         [TestMethod]
