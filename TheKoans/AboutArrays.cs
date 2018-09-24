@@ -49,7 +49,7 @@ namespace TheKoans
             CollectionAssert.AreEqual(array, dynamicArray.ToArray(), "Dynamic arrays can grow");
 
             dynamicArray.Add(13);
-            CollectionAssert.AreEqual((new int[] { 42, (int)13 }), dynamicArray.ToArray(), "Identify all of the elements in the array");
+            CollectionAssert.AreEqual((new int[] { 42, 13 }), dynamicArray.ToArray(), "Identify all of the elements in the array");
         }
 
         [TestMethod]
@@ -60,7 +60,7 @@ namespace TheKoans
             dynamicArray.Add(42);
             CollectionAssert.AreEqual(array, dynamicArray.ToArray(), "The answer to the Ultimate Question of Life is 42.  It's just not the answer to this Assert.");
             dynamicArray.Add(13);
-            CollectionAssert.AreEqual((new int[] { 42, (int)13 }), dynamicArray.ToArray(), "So Long, and Thanks for All the Array Elements..");
+            CollectionAssert.AreEqual((new int[] { 42, 13 }), dynamicArray.ToArray(), "So Long, and Thanks for All the Array Elements..");
         }
 
         //Begin RJG
@@ -121,10 +121,10 @@ namespace TheKoans
             // Notice how an array is put onto the stack.  It may not be what you expect.
             var stack = new Stack(array);
             stack.Push("last");
-            CollectionAssert.AreEqual((ICollection) stack, stack.ToArray(), "Converting this stack back into an Array may surprise you.");
+            CollectionAssert.AreEqual((ICollection) new object[] { "last", 2, 1 }, stack.ToArray(), "Converting this stack back into an Array may surprise you.");
             var poppedValue = stack.Pop();
             Assert.AreEqual("last", poppedValue, "Popped values come from the top.  I suppose if they came from the bottom it would be called... Plop?");
-            CollectionAssert.AreEqual((ICollection) stack, stack.ToArray(), "I'm not sure why this one is here.. I guess there wasn't enough material to create an AboutStacks...");
+            CollectionAssert.AreEqual((ICollection) new[] { 2, 1 }, stack.ToArray(), "I'm not sure why this one is here.. I guess there wasn't enough material to create an AboutStacks...");
         }
 
         [TestMethod]
@@ -140,16 +140,16 @@ namespace TheKoans
             var list = new LinkedList<string>(array);
 
             list.AddFirst("Say");
-            CollectionAssert.AreEqual((ICollection) list.ToArray(), list.ToArray(), "There should be enough for AboutLists.. Why is this here?");
+            CollectionAssert.AreEqual((ICollection) new[] { "Say", "Hello", "World" }, list.ToArray(), "There should be enough for AboutLists.. Why is this here?");
 
             list.RemoveLast();
-            CollectionAssert.AreEqual((ICollection)FILL_ME_IN, list.ToArray(), "You don't usually see Hello Kitty with a mouth... so would Hello Kitty ever really say 'Hello'?");
+            CollectionAssert.AreEqual((ICollection)new[] { "Say", "Hello" }, list.ToArray(), "You don't usually see Hello Kitty with a mouth... so would Hello Kitty ever really say 'Hello'?");
 
             list.RemoveFirst();
-            CollectionAssert.AreEqual((ICollection)FILL_ME_IN, list.ToArray(), "Is it me you're looking for?");
+            CollectionAssert.AreEqual((ICollection)new[] { "Hello" }, list.ToArray(), "Is it me you're looking for?");
 
             list.AddAfter(list.Find("Hello"), "World");
-            CollectionAssert.AreEqual((ICollection)FILL_ME_IN, list.ToArray(), "Now this is definitely a list test.. we're just calling ToArray multiple times here. But still good practice.");
+            CollectionAssert.AreEqual((ICollection)new[] { "Hello", "World" }, list.ToArray(), "Now this is definitely a list test.. we're just calling ToArray multiple times here. But still good practice.");
         }
 
     }
