@@ -25,7 +25,7 @@ namespace TheKoans
         {
             // Note the use of single quotes below.  They're not double quotes, which are definitely used for strings.
             var str = 'H';
-            Assert.AreEqual(typeof(Char), str.GetType(), "A single tree does not a forest make.");
+            Assert.AreEqual(typeof(char), str.GetType(), "A single tree does not a forest make.");
         }
 
         [TestMethod]
@@ -64,8 +64,11 @@ broken line";
             Assert.AreEqual(20, verbatimString.Length, "Is a newline one or two characters?");
             //Tip: What you create for the literal string will have to 
             //escape the newline characters.
-            var literalString = verbatimString;
-            Assert.AreEqual(literalString, verbatimString, "It wouldn't be cheating if you looked down.  No, not at your feet; the method below.");
+            var literalString = @"I
+am a
+broken line";
+
+			Assert.AreEqual(literalString, verbatimString, "It wouldn't be cheating if you looked down.  No, not at your feet; the method below.");
         }
 
         [TestMethod]

@@ -109,9 +109,9 @@ namespace TheKoans
             var array = new[] { "peanut", "butter", "and", "jelly" };
 
             // Calling an array's Take(x) method will return the specified x number of elements from the start of the array.
-            CollectionAssert.AreEqual(new string[] { "peanut", "butter" }, array.Take((int) 2).ToArray(), "George Washington Carver would be proud you've found another use of peanut butter.");
+            CollectionAssert.AreEqual(new string[] { "peanut", "butter" }, array.Take(2).ToArray(), "George Washington Carver would be proud you've found another use of peanut butter.");
             // Calling an array's Skip(y) method will bypass the specified y number of elements from the start of the array and return the remaining elements.
-            CollectionAssert.AreEqual(new string[] { "and" }, array.Skip((int)2).Take(1).ToArray(), "Your array slicing skills need more practice to hone your C# Karma.");
+            CollectionAssert.AreEqual(new string[] { "and" }, array.Skip(2).Take(1).ToArray(), "Your array slicing skills need more practice to hone your C# Karma.");
         }
 
         [TestMethod]

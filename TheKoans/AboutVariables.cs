@@ -94,7 +94,7 @@ namespace TheKoans
             var canDoThis = (short)aLongNumber;
 
             Assert.AreEqual(typeof(short), canDoThis.GetType(), "Do not be short on patience. Your path to enlightenment is a process, not a destination.");
-            Assert.AreEqual((short)aLongNumber, canDoThis, "Notice how the information is changed/lost in the conversion. This is why the compiler cannot implicitly do it.");
+            Assert.AreEqual(26750, canDoThis, "Notice how the information is changed/lost in the conversion. This is why the compiler cannot implicitly do it.");
         }
 
         // You can also declare a user-defined type to enable implicit conversion
