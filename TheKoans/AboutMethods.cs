@@ -122,8 +122,8 @@ namespace TheKoans
         [TestMethod]
         public void CallingPublicMethodsOnAnInstance()
         {
-            InnerSecret secret = new InnerSecret();
-            Assert.AreEqual("This is secret", secret.Secret());
+            InnerSecret s = new InnerSecret();
+            Assert.AreEqual("Secret", s.Secret());
         }
 
         //Protected methods can only be called by a subclass
@@ -134,7 +134,7 @@ namespace TheKoans
         public void CallingProtectedMethodsOnAnInstance()
         {
             StateSecret secret = new StateSecret();
-            Assert.AreEqual(FILL_ME_IN, secret.InformationLeak());
+            Assert.AreEqual("This is secret", secret.InformationLeak());
         }
 
         //But, we can't call the private methods of InnerSecret
@@ -151,7 +151,7 @@ namespace TheKoans
             string superSecretMessage = secret.GetType()
                 .GetMethod("SooperSeekrit", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
                 .Invoke(secret, null) as string;
-            Assert.AreEqual(FILL_ME_IN, superSecretMessage);
+            Assert.AreEqual("No one will find me!", superSecretMessage);
         }
 
         //Up till now we've had explicit return types. It's also
@@ -167,9 +167,9 @@ namespace TheKoans
         [TestMethod]
         public void CallingGenericMethods()
         {
-            Assert.AreEqual(typeof(FILL_ME_IN), GiveMeBack<int>(1).GetType());
+            Assert.AreEqual(typeof(int), GiveMeBack(1).GetType());
 
-            Assert.AreEqual(FILL_ME_IN, GiveMeBack<string>("Hi!"));
+            Assert.AreEqual("Hi!", GiveMeBack("Hi!"));
         }
 
     }
