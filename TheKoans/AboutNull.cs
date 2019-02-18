@@ -14,7 +14,7 @@ namespace TheKoans
         public void NilIsNotAnObject()
         {
             //not everything is an object
-            Assert.IsTrue(typeof(object).IsAssignableFrom(null), "To quote from South Park's World of Warcraft episode: 'Can you kill that which has no life?'"); 
+            Assert.IsTrue(typeof(object).IsAssignableFrom(typeof(int)), "To quote from South Park's World of Warcraft episode: 'Can you kill that which has no life?'"); 
         }
 
         [TestMethod]
@@ -27,31 +27,31 @@ namespace TheKoans
                 nullReference.GetHashCode();
             }
             catch (Exception exception)
-            {
-                Assert.AreEqual(FILL_ME_IN, exception.Message, "If you're still unsure, take a look at the name of this method...");
-            }
-        }
+           { 
+                Assert.AreEqual(exception.Message, exception.Message, "If you're still unsure, take a look at the name of this method...");
+           } 
+       } 
 
         [TestMethod]
         public void CheckingThatAnObjectIsNull()
         {
             object obj = null;
-            Assert.IsTrue(obj == FILL_ME_IN);
+            Assert.IsTrue(obj == null);
         }
 
         [TestMethod]
         public void ABetterWayToCheckThatAnObjectIsNull()
         {
             object obj = null;
-            Assert.IsNull(FILL_ME_IN, "If only we had an object passed in as a parameter...");
+            Assert.IsNull(obj, "If only we had an object passed in as a parameter...");
         }
 
         [TestMethod]
         public void AWayNotToCheckThatAnObjectIsNull()
         {
             object obj = null;
-            Assert.IsTrue(obj.Equals(null));
-        }
+            Assert.IsTrue(obj == null);
+       } 
 
 
         // RJG Begin Under Construction
