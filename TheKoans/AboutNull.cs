@@ -28,7 +28,7 @@ namespace TheKoans
             }
             catch (Exception exception)
            { 
-                Assert.AreEqual(exception.Message, exception.Message, "If you're still unsure, take a look at the name of this method...");
+                Assert.AreEqual("Object reference not set to an instance of an object.", exception.Message, "If you're still unsure, take a look at the name of this method...");
            } 
        } 
 
