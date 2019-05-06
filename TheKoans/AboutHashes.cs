@@ -71,7 +71,7 @@ namespace TheKoans
 
             CollectionAssert.AreEqual(expectedKeys, actualKeys);
 
-            var expectedValues = new List<string>() { 1.ToString(), 2.ToString() };
+            var expectedValues = new List<string>() { "uno".ToString(), "dos".ToString() };
             expectedValues.Sort();
             var actualValues = hash.Values.Cast<string>().ToList();
             actualValues.Sort();
@@ -90,7 +90,7 @@ namespace TheKoans
         // Don't cop out and use the base class Exception; investigate what the
         // specific Exception is.
         // Maybe someone in the group will write AboutMSTest to make it clearer.
-        [ExpectedException(typeof(string))]
+        [ExpectedException(typeof(System.ArgumentException))]
         public void CannotAddSameKeyInHashtable()
         {
             var hash = new Hashtable() { { "jim", 53 }, { "amy", 20 }, { "dan", 23 } };
