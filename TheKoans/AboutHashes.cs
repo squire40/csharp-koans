@@ -13,7 +13,7 @@ namespace TheKoans
         {
             var hash = new Hashtable();
             Assert.AreEqual(typeof(System.Collections.Hashtable), hash.GetType());
-            Assert.AreEqual(FILL_ME_IN, hash.Count);
+            Assert.AreEqual(0, hash.Count);
         }
 
         [TestMethod]
@@ -23,16 +23,16 @@ namespace TheKoans
             //See Haacked's blog here: http://haacked.com/archive/2008/01/06/collection-initializers.aspx
             //This is one way:
             var hash = new Hashtable() { { "one", "uno" }, { "two", "dos" } };
-            Assert.AreEqual(FILL_ME_IN, hash.Count);
+            Assert.AreEqual(2, hash.Count);
         }
 
         [TestMethod]
         public void AccessingHashes()
         {
             var hash = new Hashtable() { { "one", "uno" }, { "two", "dos" } };
-            Assert.AreEqual(FILL_ME_IN, hash["one"]);
-            Assert.AreEqual(FILL_ME_IN, hash["two"]);
-            Assert.AreEqual(FILL_ME_IN, hash["doesntExist"]);
+            Assert.AreEqual("uno", hash["one"]);
+            Assert.AreEqual("dos" , hash["two"]);
+            Assert.AreEqual(null, hash["doesntExist"]);
         }
 
         [TestMethod]
@@ -41,7 +41,7 @@ namespace TheKoans
             var hash = new Hashtable() { { "one", "uno" }, { "two", "dos" } };
             hash["one"] = "eins";
 
-            var expected = new Hashtable() { { "one", FILL_ME_IN }, { "two", "dos" } };
+            var expected = new Hashtable() { { "one", "eins" }, { "two", "dos" } };
             CollectionAssert.AreEqual(expected, hash);
         }
 
@@ -71,7 +71,7 @@ namespace TheKoans
 
             CollectionAssert.AreEqual(expectedKeys, actualKeys);
 
-            var expectedValues = new List<string>() { FILL_ME_IN.ToString(), FILL_ME_IN.ToString() };
+            var expectedValues = new List<string>() { "uno".ToString(), "dos".ToString() };
             expectedValues.Sort();
             var actualValues = hash.Values.Cast<string>().ToList();
             actualValues.Sort();
@@ -90,7 +90,7 @@ namespace TheKoans
         // Don't cop out and use the base class Exception; investigate what the
         // specific Exception is.
         // Maybe someone in the group will write AboutMSTest to make it clearer.
-        [ExpectedException(typeof(FILL_ME_IN))]
+        [ExpectedException(typeof(System.ArgumentException))]
         public void CannotAddSameKeyInHashtable()
         {
             var hash = new Hashtable() { { "jim", 53 }, { "amy", 20 }, { "dan", 23 } };
@@ -122,9 +122,9 @@ namespace TheKoans
                 hash[item.Key] = item.Value;
             }
 
-            Assert.AreEqual(FILL_ME_IN, hash["jim"]);
-            Assert.AreEqual(FILL_ME_IN, hash["jenny"]);
-            Assert.AreEqual(FILL_ME_IN, hash["amy"]);
+            Assert.AreEqual(54, hash["jim"]);
+            Assert.AreEqual(26, hash["jenny"]);
+            Assert.AreEqual(20, hash["amy"]);
 
         }
 
