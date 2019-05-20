@@ -75,13 +75,13 @@ broken line";
             //(\r\n for Windows, \n for Linux) you shouldn't just type in
             //the hardcoded escape sequence. A much better way would be to
             //use a property from the Environment class; change the line below
-            var environmentNewLine = '\n'; //Verbatim string uses the wrong newline character
+            var environmentNewLine = Environment.NewLine; //Verbatim string uses the wrong newline character
 
             //(We'll handle concatenation and better ways of that in a bit)
             const string verbatimString = @"I
 am a
 broken line";
-            var literalString = "I" + Environment.NewLine + "am a" + Environment.NewLine + "broken line";
+            var literalString = "I" + environmentNewLine + "am a" + environmentNewLine + "broken line";
             Assert.AreEqual(literalString, verbatimString, "Is a newline one or two characters?");
         }
 
@@ -220,7 +220,7 @@ broken line";
         {
             var strArray1 = new[] { "alpha", "beta", "gamma" };
             var strArray2 = new[] { "alpha", "beta", "gamma" };
-            Assert.AreEqual(strArray1, strArray2, "If only there another call other than Assert, but just for Collections...");
+            CollectionAssert.AreEqual(strArray1, strArray2, "If only there another call other than Assert, but just for Collections...");
         }
 
         [TestMethod]
@@ -302,7 +302,7 @@ broken line";
             var strProper = "United States of America";
             var strUpper = "UNITED STATES OF AMERICA";
 
-            Assert.AreEqual(String.Compare(strProper, strUpper, StringComparison.OrdinalIgnoreCase), FILL_ME_IN, "Six of one, half a dozen of another.");
+            Assert.AreEqual(String.Compare(strProper, strUpper, StringComparison.OrdinalIgnoreCase), 0, "Six of one, half a dozen of another.");
 
             // And be aware there are additional ways to compare (like .CompareTo), 
             // but that might be better under AboutObjects?
